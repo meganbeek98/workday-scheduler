@@ -28,3 +28,23 @@ $("#3").siblings("textarea").val(localStorage.getItem("three"))
 $("#4").siblings("textarea").val(localStorage.getItem("four"))
 $("#5").siblings("textarea").val(localStorage.getItem("five"))
 
+    var hourCurrent = moment().hour();
+
+    $(".middleCol").each(function(){
+        checkHour = $(this).siblings("timeBox").attr("id")
+
+            if(checkHour === hourCurrent){
+                $(this).css("background-color","red")
+            }
+            else if(checkHour < hourCurrent){
+                $(this).css("background-color","lightgray")
+            }
+            else if(checkHour > hourCurrent){
+                $(this).css("background-color","green")
+            }
+
+    });
+
+    
+
+
