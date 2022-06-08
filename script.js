@@ -18,15 +18,15 @@ $("button").on("click", function(){
     window.alert("Your Task is SAVED to your Scheduler!")
 })
 
-$("#9").siblings("textarea").val(localStorage.getItem("nine"))
-$("#10").siblings("textarea").val(localStorage.getItem("ten"))
-$("#11").siblings("textarea").val(localStorage.getItem("eleven"))
-$("#12").siblings("textarea").val(localStorage.getItem("twelve"))
-$("#1").siblings("textarea").val(localStorage.getItem("one"))
-$("#2").siblings("textarea").val(localStorage.getItem("two"))
-$("#3").siblings("textarea").val(localStorage.getItem("three"))
-$("#4").siblings("textarea").val(localStorage.getItem("four"))
-$("#5").siblings("textarea").val(localStorage.getItem("five"))
+$("#nine").siblings("textarea").val(localStorage.getItem("nine"))
+$("#ten").siblings("textarea").val(localStorage.getItem("ten"))
+$("#eleven").siblings("textarea").val(localStorage.getItem("eleven"))
+$("#twelve").siblings("textarea").val(localStorage.getItem("twelve"))
+$("#one").siblings("textarea").val(localStorage.getItem("one"))
+$("#two").siblings("textarea").val(localStorage.getItem("two"))
+$("#three").siblings("textarea").val(localStorage.getItem("three"))
+$("#four").siblings("textarea").val(localStorage.getItem("four"))
+$("#five").siblings("textarea").val(localStorage.getItem("five"))
 
     var hourCurrent = moment().hour();
 
