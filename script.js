@@ -1,5 +1,5 @@
 var dateDisplay = function(){
-    var dateCurrent = moment().format("dddd, MMMM Do YYYY")
+    var dateCurrent = moment().format('dddd, MMMM Do YYYY')
     var dayEl = document.getElementById(dayCurrent)
     dayEl.append(dateCurrent)
 }
@@ -10,7 +10,7 @@ $("button").on("click", function(){
     var task = $(this).siblings("textarea").val()
     console.log(task)
 
-    var taskTime = $(this).siblings(".timebox").attr("id")
+    var taskTime = $(this).siblings(".time-block").attr("id")
     console.log(taskTime)
 
     localStorage.setItem(taskTime, task)
@@ -31,9 +31,9 @@ $("#5").siblings("textarea").val(localStorage.getItem("five"))
     var hourCurrent = moment().hour();
 
     $(".middleCol").each(function(){
-        checkHour = $(this).siblings("timeBox").attr("id")
+        checkHour = $(this).siblings(".time-block").attr("id")
 
-            if(checkHour === hourCurrent){
+            if(checkHour == hourCurrent){
                 $(this).css("background-color","red")
             }
             else if(checkHour < hourCurrent){
@@ -44,7 +44,3 @@ $("#5").siblings("textarea").val(localStorage.getItem("five"))
             }
 
     });
-
-
-
-
