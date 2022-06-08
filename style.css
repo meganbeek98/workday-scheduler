@@ -12,7 +12,10 @@ body {
     border-left: 1px solid black;
     padding: 10px;
     background-color: lightgrey;
-    padding: 5px;
+  }
+
+  textarea:hover {
+    transform: scale(103%);
   }
   
   .jumbotron {
@@ -42,7 +45,6 @@ body {
   .hour {
     background-color: #ffffff;
     color: #000000;
-    border-top: 1px dashed #000000;
   }
   
   .past {
