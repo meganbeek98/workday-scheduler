@@ -7,10 +7,10 @@ var dateDisplay = function(){
 window.addEventListener('load', dateDisplay)
 
 $("button").on("click", function(){
-    var task = $(this).siblings("textarea").val()
+    var task = $(this).description("textarea").val()
     console.log(task)
 
-    var taskTime = $(this).siblings(".time-block").attr("id")
+    var taskTime = $(this).description("time-block").attr("id")
     console.log(taskTime)
 
     localStorage.setItem(taskTime, task)
@@ -18,29 +18,38 @@ $("button").on("click", function(){
     window.alert("Your Task is SAVED to your Scheduler!")
 })
 
-$("#nine").siblings("textarea").val(localStorage.getItem("nine"))
-$("#ten").siblings("textarea").val(localStorage.getItem("ten"))
-$("#eleven").siblings("textarea").val(localStorage.getItem("eleven"))
-$("#twelve").siblings("textarea").val(localStorage.getItem("twelve"))
-$("#one").siblings("textarea").val(localStorage.getItem("one"))
-$("#two").siblings("textarea").val(localStorage.getItem("two"))
-$("#three").siblings("textarea").val(localStorage.getItem("three"))
-$("#four").siblings("textarea").val(localStorage.getItem("four"))
-$("#five").siblings("textarea").val(localStorage.getItem("five"))
+$("#nine").description("textarea").val(localStorage.getItem("nine"))
+$("#ten").description("textarea").val(localStorage.getItem("ten"))
+$("#eleven").description("textarea").val(localStorage.getItem("eleven"))
+$("#twelve").description("textarea").val(localStorage.getItem("twelve"))
+$("#one").description("textarea").val(localStorage.getItem("one"))
+$("#two").description("textarea").val(localStorage.getItem("two"))
+$("#three").description("textarea").val(localStorage.getItem("three"))
+$("#four").description("textarea").val(localStorage.getItem("four"))
+$("#five").description("textarea").val(localStorage.getItem("five"))
 
+function timeTracker() {
     var hourCurrent = moment().hour();
 
-    $(".middleCol").each(function(){
-        checkHour = $(this).siblings(".time-block").attr("id")
+    $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
-            if(checkHour == hourCurrent){
-                $(this).css("background-color","red")
-            }
-            else if(checkHour < hourCurrent){
-                $(this).css("background-color","lightgray")
-            }
-            else if(checkHour > hourCurrent){
-                $(this).css("background-color","green")
-            }
+        // To check the time and add the classes for background indicators
+        if (blockTime < hourCurrent) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === hourCurrent) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
 
-    });
+        }
+    })
+}
