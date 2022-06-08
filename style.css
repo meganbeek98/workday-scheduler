@@ -16,10 +16,11 @@ body {
   
   .jumbotron {
     text-align: center;
-    background-color: transparent;
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   }
   
   .description{
